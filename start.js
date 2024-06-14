@@ -10,7 +10,7 @@ app.post("/api1465625/books", async (req, res) => {
   console.info(`Adding book with title ${title} by author ${author}`);
 
   const result = await query(
-    "INSERT INTO tblbook (title, author) VALUES ($1, $2) RETURNING id",
+    "INSERT INTO tblbook1465625 (title, author) VALUES ($1, $2) RETURNING id",
     [title, author]
   );
 
@@ -20,7 +20,7 @@ app.post("/api1465625/books", async (req, res) => {
 app.get("/api1465625/books", async (req, res) => {
   console.info(`Getting all books`);
 
-  const books = await query("SELECT * FROM tblbook");
+  const books = await query("SELECT * FROM tblbook1465625");
   res.json(books);
 });
 
